@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>E-Commerce Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@5.2.4/dist/amazon-cognito-identity.min.js"></script>
+  <script src="scripts.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; background: #f9f9f9; }
+    h1, h2, h3 { color: #2c3e50; }
+    input, button { padding: 8px; margin: 5px 0; }
+    button { cursor: pointer; background: #3498db; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #2980b9; }
+    ul { padding: 0; }
+    li { list-style: none; background: #fff; margin-bottom: 8px; padding: 10px; border-radius: 5px; display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <h1>E-Commerce Demo</h1>
 
+  <div id="loginSection">
+    <h3>Login or Sign Up</h3>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <br />
+    <button onclick="login()">Login</button>
+    <button onclick="signUp()">Sign Up</button>
+    <p id="loginMessage"></p>
+  </div>
+
+  <div id="productSection" style="display:none;">
+    <h2>Available Products</h2>
+    <button onclick="loadProducts()">Load Products</button>
+    <ul id="productList"></ul>
+
+    <h2>Your Cart</h2>
+    <ul id="cartList"></ul>
+    <button onclick="placeOrder()">Place Order</button>
+  </div>
+</body>
+</html>
